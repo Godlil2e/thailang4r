@@ -12,7 +12,8 @@ module ThaiLang
   end
   
   def ThaiLang._chlevel(code)
-    level = nil    
+    level = nil
+    # puts code    
     if (code >= 0x0E01 and code <= 0x0E30) or
        (code >= 0x0E32 and code <= 0x0E33) or
        (code >= 0x0E3F and code <= 0x0E46) or

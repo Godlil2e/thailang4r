@@ -1,0 +1,1 @@
+require thailang4r/word_breaker --noprompt --verbose

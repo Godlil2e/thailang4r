@@ -4,6 +4,7 @@ module ThaiLang
       load_dict(file_path)
     end
     
+    # remove unnecessary symbol each vocabulary
     def load_dict(file_path)      
       File.open(file_path) do |f|
         @str_list = f.readlines.map{|line| line.chomp}
@@ -11,6 +12,7 @@ module ThaiLang
     end
     
     def find_first_index_of_needle(prefix, offset = nil, s = nil, e = nil)
+      # puts prefix
       find_index_of_needle(:FIRST, prefix, offset, s, e)
     end
     
@@ -19,7 +21,7 @@ module ThaiLang
     end
     
     def find_index_of_needle(pos_type, prefix, offset = nil, s = nil, e = nil) 
-  		offset = offset.nil? ? 0 : offset
+  		offset = offset.nil? ? 0 : offset # T : F
   		s = s.nil? ? 0 : s
       e = e.nil? ? @str_list.length : e
       
@@ -30,6 +32,8 @@ module ThaiLang
   		while l <= r do
   			m = (l + r) / 2 
   			ch = @str_list[m][offset]
+        # puts ch
+        # puts prefix > ch
   			if ch.nil? or prefix > ch
   			  l = m + 1
   			elsif prefix < ch
@@ -38,12 +42,22 @@ module ThaiLang
   			  ans = m
   			  if pos_type == :FIRST
   			    r = m - 1
-  			  else
+  			  else #:LAST
   			    l = m + 1
   			  end
   			end
   		end
-  			
+
+      # if pos_type == :FIRST
+      #   puts "!!!!!FIRST!!!!!!!"
+  		  # puts "answer = #{ans}, cd = #{@str_list[ans]}"
+      #   puts "!!!!!!!!!!!!!!!!!"
+      # elsif pos_type == :LAST
+      #   puts "!!!!!LAST!!!!!!!"
+      #   puts "answer = #{ans}, cd = #{@str_list[ans]}"
+      #   puts "!!!!!!!!!!!!!!!!!"
+      # end
+
   		ans
   	end
   	
@@ -60,6 +74,7 @@ module ThaiLang
     def initialize(dict)
       @dict = dict
       @e = @dict.size
+      puts @e
       @s = 0
       @state = :ACTIVE
       @offset = 0

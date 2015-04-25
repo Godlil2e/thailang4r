@@ -36,7 +36,11 @@ module ThaiLang
   		path = Array.new(len + 1) {|i| nil}
   		path[0] = [0, 0, 0, :UNK]
   		left_boundary = 0
+      # puts "__________________________________"
+      # puts "_build_path finc"
+      
   		for i in 1..len
+        # puts "i = #{i}"
   		  if e_index.has_key?(i)
   		    e_index[i].each do |range|
   				  s = range[S]
@@ -44,11 +48,13 @@ module ThaiLang
   					  info = [s, path[s][WEIGHT] + 1, path[s][PATH_UNK], range[LINK_TYPE]]
   					  if path[i].nil? or _compare_path_info(info, path[i])
   						  path[i] = info
+                # puts "path[#{i}] = #{info}"
 						  end
   					end  				
 				  end
 				  if not path[i].nil?
   					left_boundary = i
+            # puts "left_bund = #{left_boundary}"
   				end
 			  end
   			if path[i].nil? and s_index.has_key?(i)
@@ -56,14 +62,27 @@ module ThaiLang
   						 path[left_boundary][WEIGHT] + 1, 
   						 path[left_boundary][PATH_UNK] + 1, 
   						 :UNK]
-  				path[i] = info;												
+  				path[i] = info;			
+          # puts "path[#{i}] = #{info}"									
   			end
+        # puts "-------------------------"
   		end	
+      # puts "__________________________________"
 			if path[len].nil?
 			  path[len] = [left_boundary, 
   			             path[left_boundary][WEIGHT] + 1, 
-  			             path[left_boundary][PATH_UNK] + 1, :UNK]  			
-			end	  		
+  			             path[left_boundary][PATH_UNK] + 1, :UNK]  	
+        # puts "path[#{len}] = #{path[len]}" 		
+			end	  
+
+      # debug block
+      for i in 0..len
+        # puts "path[#{i}] = #{path[i]}"
+      end	
+      # puts "end build path"
+      # puts ""
+      # debug block
+
       path
     end 
 	
@@ -74,8 +93,10 @@ module ThaiLang
   			info = path[i]
   			s = info[POINTER]
   			ranges << [s, i, info[PATH_LINK_TYPE]]
+        # puts "ranges = #{ranges}"
   			i = s
   		end
+      puts ranges.reverse
   		ranges.reverse
   	end
 	
