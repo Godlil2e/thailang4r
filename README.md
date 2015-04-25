@@ -4,11 +4,9 @@ Thai language utility for Ruby
 
 I have built this project in order to collect and share tools for Thai language, which are written in Ruby language. 
 
-<<<<<<< HEAD
 # New Feature
 =======
 # New Features
->>>>>>> 71990f46082d34609c049356a5e90d566e7d2719
 * Breaking sentences or word into syllables (Return number of syllables)
 * More vocabulary with new Dictionary (more than 40,000 vocab)
 
