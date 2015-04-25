@@ -76,9 +76,9 @@ module ThaiLang
 			end	  
 
       # debug block
-      for i in 0..len
-        # puts "path[#{i}] = #{path[i]}"
-      end	
+      # for i in 0..len
+      #   puts "path[#{i}] = #{path[i]}"
+      # end	
       # puts "end build path"
       # puts ""
       # debug block
@@ -96,7 +96,7 @@ module ThaiLang
         # puts "ranges = #{ranges}"
   			i = s
   		end
-      puts ranges.reverse
+      # puts ranges.reverse
   		ranges.reverse
   	end
 	

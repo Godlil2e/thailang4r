@@ -139,7 +139,7 @@ module ThaiLang
 						possibility_word << word
 					end
 				}
-				puts possibility_word
+				# puts possibility_word
 				return possibility_word
 			# has not vowel in any word
 			else
@@ -160,10 +160,8 @@ module ThaiLang
 				end
 				possibility_word << [lexical[0], lexical[1], size, word[lexical[0]..lexical[1]-1]]
 			end
-
-			
-			possibility_word = filter_factor(possibility_word)  #delete  0 5 5
-			
+		
+			possibility_word = filter_factor(possibility_word)  #delete  0 5 5			
 			possibility_word = find_coor(possibility_word, word, max_size)    #return  2 5 3
 			
 			return possibility_word

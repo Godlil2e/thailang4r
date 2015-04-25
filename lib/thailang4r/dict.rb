@@ -74,7 +74,7 @@ module ThaiLang
     def initialize(dict)
       @dict = dict
       @e = @dict.size
-      puts @e
+      # puts @e
       @s = 0
       @state = :ACTIVE
       @offset = 0

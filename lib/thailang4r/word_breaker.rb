@@ -61,9 +61,8 @@ module ThaiLang
       if answer.class != Array
         return 1
       else
-        puts answer.length
+        return answer.length
       end
-      
       
     end
   end
