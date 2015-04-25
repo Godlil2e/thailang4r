@@ -4,8 +4,9 @@ Thai language utility for Ruby
 
 I have built this project in order to collect and share tools for Thai language, which are written in Ruby language. 
 
-# New Feature
+# New Features
 * Breaking sentences or word into syllables (Return number of syllables)
+* More vocabulary with new Dictionary (more than 40,000 vocab)
 
 # Installation
 ------------
@@ -25,9 +26,7 @@ require 'thailang4r/word_breaker'
 word_breaker = ThaiLang::WordBreaker.new
 puts word_breaker.break_into_words("ฉันกินข้าว")
 ```
-
 * Syllable breaker (New Feature)
-------------
 ```ruby
 # encoding: UTF-8
 require 'thailang4r/syllable_breaker.rb'
