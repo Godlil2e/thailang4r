@@ -55,7 +55,7 @@ module ThaiLang
       # #   puts word[x[0], x[1] - x[0]]
       # # end
       # puts "+++++++++++++++++"
-
+      words.delete(" ")
       answer = @syllable._build_each_word_ranges(words, dag, ranges)
       print "#{answer}\n"
       if answer.class != Array

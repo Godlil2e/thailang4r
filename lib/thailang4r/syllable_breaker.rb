@@ -14,7 +14,8 @@ module ThaiLang
 			# puts dag
 			# puts "$$$$$$$$"
 			answer = []
-			
+			print "words = #{words}\n"
+			puts words.length
 			if words.length > 1 or dag.length > 2
 				words.each do |word|
 					answer_stack = []
