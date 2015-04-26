@@ -1,3 +1,5 @@
+require "thailang4r.rb"
+
 module ThaiLang
 	class SyllableBreaker
 		FM = :FRONT_MERGE

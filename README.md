@@ -30,7 +30,7 @@ puts word_breaker.break_into_words("ฉันกินข้าว")
 * Syllable breaker (New Feature)
 ```ruby
 # encoding: UTF-8
-require 'thailang4r/syllable_breaker.rb'
-word_breaker = ThaiLang::WordBreaker.new
-puts word_breaker.break_into_syllable("ฉันกินข้าว")
+require 'thailang4r/word_breaker'
+syllable_breaker = ThaiLang::WordBreaker.new
+puts syllable_breaker.break_into_syllable("ทดสอบระบบ")  # will puts 4
 ```
