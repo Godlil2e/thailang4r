@@ -126,7 +126,7 @@ module ThaiLang
 						possibility_word << word[i-1].concat(word[i])
 						remaining_word << word[i+1..word.length]
 					elsif lexical[i] == FI 
-						if lexical.length > 2 and(word[i+2].ord == 0x0E48 || word[i+2].ord == 0x0E49 || word[i+2].ord == 0x0E4A)
+						if lexical.length > 2 and word[i+2] != nil and (word[i+2].ord == 0x0E48 || word[i+2].ord == 0x0E49 || word[i+2].ord == 0x0E4A)
 							possibility_word << word[i].concat(word[i+1..i+2])
 							# remaining_word << word[i+3..word.length]
 						else
